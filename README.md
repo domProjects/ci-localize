@@ -40,16 +40,19 @@ et toujours dans le même fichier :
     ];
 ```
 
-Modification du fichier **app/Controllers/BaseController.php**. Ajoutez la ligne suivante :
+Modification du fichier **app/Controllers/BaseController.php**. Ajoutez les lignes suivantes :
 
 ```php
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // ...
 
+        //
+        $configApp = config(\Config\App::class);
+
         // Retrieval of variables for the language
-        $this->data['locale'] = $this->locale;
-        $this->data['supportedLocales'] = $this->supportedLocales;
+        $this->data['locale'] = $request->getLocale();
+        $this->data['supportedLocales'] = $configApp->supportedLocales;
 
         // ...
     }
