@@ -41,6 +41,16 @@ et toujours dans le même fichier :
     ];
 ```
 
+Modification du fichier **app/Config/App.php**. Modifiez la ligne suivante :
+
+```php
+    public bool $negotiateLocale = false;
+```
+par
+```php
+    public bool $negotiateLocale = true;
+```
+
 
 ## License
 
