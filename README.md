@@ -21,6 +21,7 @@ Installation is done through Composer.
 composer require domprojects/ci-localize
 ```
 
+
 Modification du fichier **app/Config/Filters.php**. Ajoutez la ligne suivante :
 
 ```php
@@ -40,6 +41,7 @@ et toujours dans le même fichier :
         ],
     ];
 ```
+
 
 Modification du fichier **app/Config/App.php**. Modifiez la ligne suivante :
 
