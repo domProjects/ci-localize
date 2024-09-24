@@ -2,6 +2,7 @@
 
 Allows you to easily change and manage the language of your CodeIgniter project.
 
+
 ## Getting Started
 
 ### Prerequisites
@@ -40,38 +41,6 @@ et toujours dans le même fichier :
     ];
 ```
 
-Modification du fichier **app/Controllers/BaseController.php**. Ajoutez les lignes suivantes :
-
-```php
-abstract class BaseController extends Controller
-{
-    // ...
-
-    /**
-     *
-     */
-    protected $locale;
-
-    /**
-     *
-     */
-    protected $supportedLocales;
-
-    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
-    {
-        // ...
-
-        //
-        $configApp = config(\Config\App::class);
-
-        // Retrieval of variables for the language
-        $this->locale = $request->getLocale();
-        $this->supportedLocales = $configApp->supportedLocales;
-
-        // ...
-    }
-}
-```
 
 ## License
 
