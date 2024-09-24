@@ -19,3 +19,42 @@ Installation is done through Composer.
 ```console
 composer require domprojects/ci-localize
 ```
+
+Modification du fichier **app/Config/Filters.php**. Ajoutez la ligne suivante :
+
+```console
+    public array $aliases = [
+        // ...
+        'localize' => \App\Filters\Localize::class,
+    ];
+```
+
+et toujours dans le même fichier :
+
+```console
+    public array $globals = [
+        'before' => [
+            // ...
+            'localize',
+        ],
+    ];
+```
+
+Modification du fichier **app/Controllers/BaseController.php**. Ajoutez la ligne suivante :
+
+```console
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
+    {
+        // ...
+
+        // Retrieval of variables for the language
+        $this->data['locale'] = $this->locale;
+        $this->data['supportedLocales'] = $this->supportedLocales;
+
+        // ...
+    }
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
