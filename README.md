@@ -6,7 +6,7 @@ Allows you to easily change and manage the language of your CodeIgniter project.
 
 ### Prerequisites
 
-Usage of Shield requires the following:
+Usage of Localize requires the following:
 
 - A [CodeIgniter 4.5.0+](https://github.com/codeigniter4/CodeIgniter4/) based project
 - [Composer](https://getcomposer.org/) for package management
