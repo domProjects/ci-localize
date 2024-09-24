@@ -1,0 +1,48 @@
+{
+    "name": "domprojects/ci-localize",
+    "description": "",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "codeigniter",
+        "codeigniter4",
+        "localize",
+        "filter"
+    ],
+    "authors": [
+        {
+            "name": "Emmanuel Campait",
+            "email": "support@domprojects.com",
+            "homepage": "https://domprojects.com"
+        }
+    ],
+    "homepage": "https://github.com/domProjects/ci-localize",
+    "support": {
+        "issues": "https://github.com/domprojects/ci-localize/issues",
+        "source": "https://github.com/domprojects/ci-localize"
+    },
+    "require": {
+        "php": "^8.1"
+    },
+    "autoload": {
+        "files": [
+            "src/Filters/Localize.php"
+        ],
+        "psr-4": {
+            "domprojects\\ci-localize\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Composer\\Script\\DumpAutoload::run"
+        ],
+        "post-update-cmd": [
+            "Composer\\Script\\DumpAutoload::run"
+        ]
+    }
+}
