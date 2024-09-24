@@ -21,29 +21,32 @@ Installation is done through Composer.
 composer require domprojects/ci-localize
 ```
 
-
-Modification du fichier **app/Config/Filters.php**. Ajoutez la ligne suivante :
+#### Filters setup
+Dans le fichier **app/Config/Filters.php**, ajoutez la ligne suivante :
 
 ```php
     public array $aliases = [
         // ...
+
         'localize' => \App\Filters\Localize::class,
     ];
 ```
 
-et toujours dans le même fichier :
+Toujours dans le même fichier :
 
 ```php
     public array $globals = [
         'before' => [
             // ...
+
             'localize',
         ],
     ];
 ```
 
 
-Modification du fichier **app/Config/App.php**. Modifiez la ligne suivante :
+#### App setup
+Dans le fichier **app/Config/App.php**, modifiez la ligne suivante :
 
 ```php
     public bool $negotiateLocale = false;
