@@ -22,23 +22,21 @@ composer require domprojects/ci-localize
 ```
 
 #### Filters setup
-Dans le fichier **app/Config/Filters.php**, ajoutez la ligne suivante :
+In the **app/Config/Filters.php** file, add the following line:
 
 ```php
     public array $aliases = [
         // ...
-
         'localize' => \App\Filters\Localize::class,
     ];
 ```
 
-Toujours dans le même fichier :
+Still in the same file:
 
 ```php
     public array $globals = [
         'before' => [
             // ...
-
             'localize',
         ],
     ];
@@ -46,12 +44,12 @@ Toujours dans le même fichier :
 
 
 #### App setup
-Dans le fichier **app/Config/App.php**, modifiez la ligne suivante :
+In the **app/Config/App.php** file, modify the following line:
 
 ```php
     public bool $negotiateLocale = false;
 ```
-par
+by
 ```php
     public bool $negotiateLocale = true;
 ```
