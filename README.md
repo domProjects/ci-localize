@@ -22,7 +22,7 @@ composer require domprojects/ci-localize
 
 Modification du fichier **app/Config/Filters.php**. Ajoutez la ligne suivante :
 
-```console
+```php
     public array $aliases = [
         // ...
         'localize' => \App\Filters\Localize::class,
@@ -31,7 +31,7 @@ Modification du fichier **app/Config/Filters.php**. Ajoutez la ligne suivante :
 
 et toujours dans le même fichier :
 
-```console
+```php
     public array $globals = [
         'before' => [
             // ...
@@ -42,7 +42,7 @@ et toujours dans le même fichier :
 
 Modification du fichier **app/Controllers/BaseController.php**. Ajoutez la ligne suivante :
 
-```console
+```php
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // ...
